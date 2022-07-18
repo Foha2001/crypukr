@@ -5,6 +5,7 @@ Version: 0.1.0
 Author: Foued Hamouda
 Maintainer: The package maintainer <foha2001@gmail.com>
 Description: This package describes all codes used to write the article Is crypocurrency markets a safe haven.
+Imports: ggplot2, tidyverse, dplyr, scales, tibble, xts
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

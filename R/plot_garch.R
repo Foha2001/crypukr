@@ -1,13 +1,10 @@
-
-#'plot garch model
-#'
+#" package
 #' @param x the data set in xts format
 #' @param T give a the title for the plot
-#'
-#' @return
+#' @return a plot for garch model
 #' @export
 
-plotgarch <- function (x,T) {
+plotgarch <- function (x) {
 
 library(xts)
 alpha <- 0.1
@@ -22,32 +19,19 @@ for (t in 2:nobs) {
   predvar[t] <- omega + alpha * e2[t-1] +beta * predvar[t-1]
 }
 predvol <- sqrt(predvar)
-predvol <- xts(predvol, order.by = index(R_data))
-#plot(predvol, type='l', main=" Litecoin Volatility")
+predvol <- xts(predvol, order.by = index(x))
 colnames(predvol)<- c("value")
-library(scales)
-library(tidyverse)
-library(dplyr)
-library(ggplot2)
-library(tibble)
-predvol %>%
-as.data.frame() %>%
-rownames_to_column("Date") %>%
-mutate(Date = as.Date(Date, format = "%Y-%m-%d")) %>%
-ggplot(aes(Date, value)) +
+predvol |>
+as.data.frame() |>
+  tibble::rownames_to_column("Date") |>
+dplyr::mutate(Date = as.Date(Date, format = "%Y-%m-%d")) |>
+  ggplot2::ggplot(aes(Date, value)) +
 geom_line() +
 scale_x_date(
 date_breaks = "1 month",
-labels = date_format("%b\n%Y")) +
-theme_minimal() + labs(title = T,
+labels = scales::date_format("%Y")) +
+theme_minimal(base_size = 20) + labs(title = "",
                            subtitle = "Garch(1,1)")
-
-
-
-
-
-
-
 
 
 }

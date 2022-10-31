@@ -4,7 +4,7 @@
 #' @return a plot for garch model
 #' @export
 
-plotgarch <- function (x) {
+plotgarch <- function (x, T) {
 
 library(xts)
 alpha <- 0.1
@@ -30,8 +30,7 @@ geom_line() +
 scale_x_date(
 date_breaks = "1 month",
 labels = scales::date_format("%Y")) +
-theme_minimal(base_size = 20) + labs(title = "",
-                           subtitle = "Garch(1,1)")
+theme_minimal(base_size = 10) + labs(title = paste(T))
 
 
 }

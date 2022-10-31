@@ -9,11 +9,14 @@ plotgarch(x, T)
 \arguments{
 \item{x}{an xts format serie}
 
-\item{T}{give a the title for the plot with "" bracket}
+\item{T}{give a title for the plot within "" bracket}
 }
 \value{
-Return a plot for a Garch model
+Return a plot with Garch(1,1) model
 }
 \description{
 plot Garch
+}
+\examples{
+plotgarch(AA$AA.Adjusted,"Alcoa volatility")
 }

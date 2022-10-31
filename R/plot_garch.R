@@ -1,7 +1,7 @@
 #' plot Garch
 #' @param x  an xts format serie
-#' @param T  give a the title for the plot with "" bracket
-#' @return Return a plot for a Garch model
+#' @param T  give a title for the plot within "" bracket
+#' @return   Return a plot with Garch(1,1) model
 #' @export
 #' @examples
 #' plotgarch(AA$AA.Adjusted,"Alcoa volatility")

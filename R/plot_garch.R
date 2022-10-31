@@ -1,8 +1,10 @@
-#" package
-#' @param x the data set in xts format
-#' @param T give a the title for the plot
-#' @return a plot for garch model
+#' plot Garch
+#' @param x  an xts format serie
+#' @param T  give a the title for the plot with "" bracket
+#' @return Return a plot for a Garch model
 #' @export
+#' @examples
+#' plotgarch(AA$AA.Adjusted,"Alcoa volatility")
 
 plotgarch <- function (x, T) {
 

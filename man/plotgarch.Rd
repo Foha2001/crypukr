@@ -2,18 +2,18 @@
 % Please edit documentation in R/plot_garch.R
 \name{plotgarch}
 \alias{plotgarch}
-\title{plot garch model}
+\title{plot Garch}
 \usage{
 plotgarch(x, T)
 }
 \arguments{
-\item{x}{the data set in xts format}
+\item{x}{an xts format serie}
 
-\item{T}{give a the title for the plot}
+\item{T}{give a the title for the plot with "" bracket}
 }
 \value{
-
+Return a plot for a Garch model
 }
 \description{
-plot garch model
+plot Garch
 }
